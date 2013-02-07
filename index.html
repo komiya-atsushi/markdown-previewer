@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>Markdown Previewer</title>
+    <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" media="all" />
+    <link type="text/css" href="css/markdown-previewer.css" rel="stylesheet" media="all" />
+    <script src="js/markdown-previewer.js"></script>
+    <script src="js/showdown.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="container">
+	  <div class="page-header">
+	    <h1>
+	      <span id="filenameLabel">Markdown Previewer</span>
+	      <small><span id="lastModifiedLabel"></span></small>
+	    </h1>
+	  </div>
+
+	  <div id="dropArea" class="hero-unit">
+	    <h1 style="margin-top: 0px; margin-left: -10px; margin-right: -10px;">Drop your markdown file here</h1>
+	    <h3>and edit the file with your Favorite text editors!</h3>
+	  </div>
+	
+	  <div id="renderingArea"></div>
+	  <pre id="READMEmd" style="display: none;">
+Introduction
+------------
+
+Markdown Previewer provides Markdown online preview without any AJAX requests.
+
+You can edit the previewing file with your favorite text editors and Previewer reloads &amp re-rendering the file automatically.
+
+
+Tested Web Browsers
+-------------------
+
+- Google Chrome 24 (Windows)
+
+
+Copyright
+---------
+
+&copy; 2013 KOMIYA Atsushi.
+
+
+
+
+Acknowledgements
+----------------
+
+Markdown Previewer makes use of the following 3rd-party libraries.
+
+- [showdown.js](https://github.com/coreyti/showdown) for Markdown rendering.
+- [Twitter Bootstrap](https://bootstrap.github.com/)
+
+	  </pre>
+      </div>
+
+      <div id="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="container">
+	<p class="muted credit">
+	  &copy; 2013 <a href="http://k11i.biz/">KOMIYA Atsushi</a>. / <a href="http://twitter.com/komiya_atsushi">@komiya_atsushi</a>
+	</p>
+      </div>
+    </div>
+  </body>
+</html>

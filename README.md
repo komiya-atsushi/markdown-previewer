@@ -16,6 +16,7 @@ Tested Web Browsers
 
 - Google Chrome 24 (Mac OS X / Windows)
 - Safari 6.0.2 (Mac OS X)
+- Mozilla Firefox 18.0.2 (Mac OS X / Windows)
 
 
 Demo site
@@ -24,10 +25,16 @@ Demo site
 See [http://playground.k11i.biz/mp/](http://playground.k11i.biz/mp/)
 
 
+ToDo
+----
+
+- Support RDoc rendering
+
+
 Copyright &amp; License
 -----------------------
 
-Copyright (c) 2012 KOMIYA Atsushi.
+Copyright (c) 2013 KOMIYA Atsushi.
 
     MIT License
 

@@ -77,18 +77,20 @@
 	}, false);
 
 	function setInnerText(obj, text) {
-		if (isFx) {
-			obj.textContent = text;
-		} else {
-			obj.innerText = text;
-		}
+		isFx ? (obj.textContent = text) : (obj.innerText = text);
+	}
+
+	function getInnerText(obj) {
+		return isFx ? obj.textContent : obj.innerText;
 	}
 
 	function onDrop(ev) {
 		var file = ev.dataTransfer.files[0];
+		if (file.name.match(/\.rdoc$/)) {
+			converter = new Attacklab.rundown.converter();
+		}
 		
 		dropArea.style.display = 'none';
-		renderingArea.style.display = 'block';
 
 		setInnerText(document.getElementById(FILENAME_LABEL), file.name);
 		lastModifiedLabel = document.getElementById(LAST_MODIFIED_LABEL);
@@ -118,6 +120,16 @@
 		renderingArea.innerHTML = converter.makeHtml(text);
 		if (date) {
 			setInnerText(lastModifiedLabel, date.toLocaleString());
+		}
+
+		var $headerList = $('#headerList');
+		$headerList.empty();
+
+		var $headers = $('#renderingArea > h1, #renderingArea > h2, #renderingArea > h3, #renderingArea > h4, #renderingArea > h5, #renderingArea > h6');
+		for (var i = 0; i < $headers.length; i++) {
+			var h = $headers[i];
+			var anchor = $('<a/>', { href: "#" + h.id, text: getInnerText(h) });
+			$headerList.append($('<li/>').append(anchor));
 		}
 	}
 })();

@@ -1,22 +1,22 @@
 Markdown Previewer
 ==================
 
-Real-time Markdown Previewer without any AJAX requests.
+Real-time Markdown &amp; RDoc Previewer without any AJAX requests.
 
 Introduction
 ------------
 
-Markdown Previewer provides Markdown online preview without any AJAX requests.
+Markdown Previewer provides Markdown (.md) and RDoc (.rdoc) online preview without any AJAX requests.
 
-You can edit the previewing file with your favorite text editors and Previewer reloads &amp re-rendering the file automatically.
+You can edit the previewing file with your favorite text editors and Previewer reloads &amp; re-rendering the file automatically.
 
 
 Tested Web Browsers
 -------------------
 
-- Google Chrome 24 (Mac OS X / Ubuntu / Windows)
-- Safari 6.0.2 (Mac OS X)
-- Mozilla Firefox 18.0.2 (Mac OS X / Ubuntu / Windows)
+ - Google Chrome 24 (Mac OS X / Ubuntu / Windows)
+ - Safari 6.0.2 (Mac OS X)
+ - Mozilla Firefox 18.0.2 (Mac OS X / Ubuntu / Windows)
 
 
 Demo site
@@ -28,8 +28,9 @@ See [http://playground.k11i.biz/mp/](http://playground.k11i.biz/mp/)
 ToDo
 ----
 
-- Support RDoc rendering
-
+ - Apply Affix &amp; Scrollspy to sidebar.
+ - Add HTML Output view.
+ - Support Textile format.
 
 Copyright &amp; License
 -----------------------
@@ -63,5 +64,6 @@ Acknowledgements
 
 Markdown Previewer makes use of the following 3rd-party libraries.
 
-- [showdown.js](https://github.com/coreyti/showdown) for Markdown rendering.
-- [Twitter Bootstrap](https://bootstrap.github.com/)
+ - [showdown.js](https://github.com/coreyti/showdown) for Markdown rendering.
+ - [rundown.js](https://github.com/rubyworks/rundown) for RDoc rendering.
+ - [Twitter Bootstrap](http://twitter.github.com/bootstrap/)

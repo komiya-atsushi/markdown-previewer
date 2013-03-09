@@ -1,6 +1,8 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>Markdown Previewer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" media="all" />
     <link type="text/css" href="css/markdown-previewer.css" rel="stylesheet" media="all" />
     <script src="js/jquery-1.9.1.min.js"></script>
@@ -30,7 +32,19 @@
 	    </div>
 
 	    <div class="span9">
-	      <div id="renderingArea"></div>
+	      <ul class="nav nav-tabs" style="margin-bottom: 0">
+		<li id="view_preview" class="active">
+		  <a id="tab_preview">preview</a>
+		</li>
+		<li id="view_html">
+		  <a id="tab_html">HTML</a>
+		</li>
+	      </ul>
+	      
+	      <div class="viewArea" id="renderingArea"></div>
+	      <div class="viewArea">
+		<pre id="htmlArea" style="display: none"></pre>
+	      </div>
 	    </div>
 	  </div>
 

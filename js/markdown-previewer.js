@@ -10,7 +10,36 @@
 	var converter = null;
 	var renderingArea = null;
 	var dropArea = null;
+	var htmlArea = null;
 	var lastModifiedLabel = null;
+
+	window.addEventListener("load", function() {
+		converter = new Showdown.converter();
+
+		dropArea = document.getElementById(DROP_AREA);
+		dropArea.addEventListener("drop", onDrop, false);
+		dropArea.addEventListener("dragover", function(ev) { ev.preventDefault(); }, false);
+
+		htmlArea = document.getElementById("htmlArea");
+
+		renderingArea = document.getElementById(RENDERING_AREA);
+		render(document.getElementById(README).value);
+
+		$("#tab_preview").click(function() {
+			$("#view_html").removeClass("active");
+			$("#view_preview").addClass("active");
+			$("#renderingArea").css("display", "block");
+			$("#htmlArea").css("display", "none");
+		});
+		$("#tab_html").click(function() {
+			$("#view_html").addClass("active");
+			$("#view_preview").removeClass("active");
+			$("#renderingArea").css("display", "none");
+			$("#htmlArea").css("display", "block");
+		});
+
+
+	}, false);
 
 	var fileUpdationDetector = {
 		tid: null,
@@ -64,18 +93,6 @@
 		};
 	}
 
-	window.addEventListener("load", function() {
-		converter = new Showdown.converter();
-
-		dropArea = document.getElementById(DROP_AREA);
-		dropArea.addEventListener("drop", onDrop, false);
-		dropArea.addEventListener("dragover", function(ev) { ev.preventDefault(); }, false);
-
-		renderingArea = document.getElementById(RENDERING_AREA);
-		render(document.getElementById(README).value);
-
-	}, false);
-
 	function setInnerText(obj, text) {
 		isFx ? (obj.textContent = text) : (obj.innerText = text);
 	}
@@ -88,8 +105,9 @@
 		var file = ev.dataTransfer.files[0];
 		if (file.name.match(/\.rdoc$/)) {
 			converter = new Attacklab.rundown.converter();
+			
 		}
-		
+
 		dropArea.style.display = 'none';
 
 		setInnerText(document.getElementById(FILENAME_LABEL), file.name);
@@ -116,8 +134,12 @@
 		readFile(file, function(text) { render(text, file.lastModifiedDate); });
 	}
 
+
 	function render(text, date) {
-		renderingArea.innerHTML = converter.makeHtml(text);
+		var html = converter.makeHtml(text);
+		renderingArea.innerHTML = html;
+		setInnerText(htmlArea, html);
+
 		if (date) {
 			setInnerText(lastModifiedLabel, date.toLocaleString());
 		}

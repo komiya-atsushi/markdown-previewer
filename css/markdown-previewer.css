@@ -14,11 +14,11 @@ h4, h5, h6 {
   margin-top: 10px;
 }
 
-#renderingArea {
+.viewArea {
   border: 1px solid #ddd;
-  border-radius: 4px;
   padding: 20px;
   margin-bottom: 20px;
+  border-top-width: 0px;
 }
 
 #wrap {

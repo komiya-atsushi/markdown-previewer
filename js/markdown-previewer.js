@@ -10,7 +10,7 @@
 	var converter = null;
 	var renderingArea = null;
 	var dropArea = null;
-	var htmlArea = null;
+	var htmlSourceArea = null;
 	var lastModifiedLabel = null;
 
 	window.addEventListener("load", function() {
@@ -20,7 +20,7 @@
 		dropArea.addEventListener("drop", onDrop, false);
 		dropArea.addEventListener("dragover", function(ev) { ev.preventDefault(); }, false);
 
-		htmlArea = document.getElementById("htmlArea");
+		htmlSourceArea = document.getElementById("htmlSourceArea");
 
 		renderingArea = document.getElementById(RENDERING_AREA);
 		render(document.getElementById(README).value);
@@ -138,7 +138,7 @@
 	function render(text, date) {
 		var html = converter.makeHtml(text);
 		renderingArea.innerHTML = html;
-		setInnerText(htmlArea, html);
+		setInnerText(htmlSourceArea, html);
 
 		if (date) {
 			setInnerText(lastModifiedLabel, date.toLocaleString());

@@ -29,7 +29,6 @@ ToDo
 ----
 
  - Apply Affix &amp; Scrollspy to sidebar.
- - Add HTML Output view.
  - Support Textile format.
 
 Copyright &amp; License
@@ -67,3 +66,4 @@ Markdown Previewer makes use of the following 3rd-party libraries.
  - [showdown.js](https://github.com/coreyti/showdown) for Markdown rendering.
  - [rundown.js](https://github.com/rubyworks/rundown) for RDoc rendering.
  - [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
+ - [ZeroClipboard](https://github.com/jonrohan/ZeroClipboard)

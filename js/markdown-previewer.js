@@ -12,9 +12,17 @@
 	var dropArea = null;
 	var htmlSourceArea = null;
 	var lastModifiedLabel = null;
+	var clip = null;
 
 	window.addEventListener("load", function() {
 		converter = new Showdown.converter();
+
+		clip = new ZeroClipboard(document.getElementById("copyHtml"), {
+			moviePath: "swf/ZeroClipboard.swf"
+		});
+		clip.on('mousedown', function(client) {
+			clip.setText(getInnerText(htmlSourceArea));
+		});
 
 		dropArea = document.getElementById(DROP_AREA);
 		dropArea.addEventListener("drop", onDrop, false);
@@ -37,7 +45,6 @@
 			$("#renderingArea").css("display", "none");
 			$("#htmlArea").css("display", "block");
 		});
-
 
 	}, false);
 
@@ -105,7 +112,6 @@
 		var file = ev.dataTransfer.files[0];
 		if (file.name.match(/\.rdoc$/)) {
 			converter = new Attacklab.rundown.converter();
-			
 		}
 
 		dropArea.style.display = 'none';

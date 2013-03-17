@@ -8,6 +8,7 @@
     <script src="js/jquery-1.9.1.min.js"></script>
     <script src="js/showdown.js"></script>
     <script src="js/rundown.js"></script>
+    <script src="js/ZeroClipboard.min.js"></script>
     <script src="js/markdown-previewer.js"></script>
   </head>
   <body>
@@ -43,6 +44,9 @@
 	      
 	      <div class="viewArea" id="renderingArea"></div>
 	      <div class="viewArea" id="htmlArea" style="display: none">
+		<p style="text-align: right">
+		  <button class="btn btn-small" id="copyHtml">Copy HTML</button>
+		</p>
 		<pre id="htmlSourceArea"></pre>
 	      </div>
 	    </div>
